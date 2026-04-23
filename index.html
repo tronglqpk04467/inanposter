@@ -3,33 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <title>LQT Poster</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind CDN (khỏi build) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css?family=Inter:400" rel="stylesheet">
 </head>
-<body>
 
-<header class="header">
-  <img src="images/Logo.png" class="logo">
+<body class="bg-gray-100 font-[Inter]">
 
-  <input type="text" placeholder="Tìm kiếm..." class="search">
+<!-- HEADER -->
+<div class="bg-black text-white flex items-center p-3 gap-5">
+  <img src="images/Logo.png" class="w-16">
 
-  <nav>
+  <input placeholder="Tìm kiếm"
+    class="px-3 py-1 text-black rounded w-64">
+
+  <div class="flex gap-6 ml-10">
     <a href="#">Trang chủ</a>
     <a href="#">Giới thiệu</a>
     <a href="#">Kiến thức</a>
     <a href="#">Liên hệ</a>
-  </nav>
-</header>
+  </div>
 
-<section class="slider">
-  <img id="slide" src="images/trangchudoi2.png">
-</section>
+  <div class="ml-auto flex gap-3">
+    <button class="border px-3 py-1">Đăng ký</button>
+    <button class="border px-3 py-1">Đăng nhập</button>
+  </div>
+</div>
 
-<section class="products" id="products"></section>
+<!-- SLIDER -->
+<div class="relative">
+  <button onclick="prev()" class="absolute left-2 top-1/2 bg-black text-white px-3 text-2xl">‹</button>
 
-<footer class="footer">
-  © 2026 LQT Poster
-</footer>
+  <img id="slide"
+    src="images/trangchudoi2.png"
+    class="w-full h-[400px] object-cover">
+
+  <button onclick="next()" class="absolute right-2 top-1/2 bg-black text-white px-3 text-2xl">›</button>
+</div>
+
+<!-- PRODUCTS -->
+<div id="products"
+  class="grid grid-cols-5 gap-5 p-5 bg-gray-200"></div>
 
 <script src="app.js"></script>
+
 </body>
 </html>
